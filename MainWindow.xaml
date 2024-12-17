@@ -1,0 +1,23 @@
+﻿<Window x:Class="jopka.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:jopka"
+        mc:Ignorable="d"
+        Title="лев толстой" Height="450" Width="1000" FontSize="20" ResizeMode="NoResize">
+    <Grid>
+        <DataGrid Name="ApartmentsGrid" AutoGenerateColumns="False" Margin="10,10,10,124" CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="№ квартиры" Binding="{Binding ApartmentNumber}" Width="100"/>
+                <DataGridTextColumn Header="Площадь, м²" Binding="{Binding Area}" Width="100"/>
+                <DataGridTextColumn Header="Человек" Binding="{Binding Residents}" Width="100"/>
+                <DataGridCheckBoxColumn Header="Отдельный телефон" Binding="{Binding HasSeparatePhone}" Width="150"/>
+                <DataGridCheckBoxColumn Header="Газовая колонка" Binding="{Binding HasGasColumn}" Width="150"/>
+                <DataGridCheckBoxColumn Header="С коммун. услугами" Binding="{Binding HasUtilities}" Width="150"/>
+                <DataGridTextColumn Header="Итого (руб.)" Binding="{Binding Total}" Width="100" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Рассчитать" Height="100" Width="300" Click="CalculateButton_Click" VerticalAlignment="Bottom" Margin="10"/>
+    </Grid>
+</Window>
